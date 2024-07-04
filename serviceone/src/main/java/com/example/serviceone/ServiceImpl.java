@@ -18,11 +18,11 @@ public class ServiceImpl {
         this.restTemplate = restTemplate;
     }
 
-    public List<Movie> getAllMovie(){
+    public List<Movie> getAllMovie() {
         return feignClient.getAllMovies();
     }
 
-    public List<Movie> getAllMovieUsingRestTemplate(){
+    public List<Movie> getAllMovieUsingRestTemplate() {
         Movie[] response = restTemplate.getForObject("http://localhost:8080/movie", Movie[].class);
         return Arrays.asList(response);
     }
